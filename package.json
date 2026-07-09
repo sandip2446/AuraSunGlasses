@@ -1,0 +1,19 @@
+{
+  "name": "aurasunglasses-root",
+  "version": "1.0.0",
+  "description": "Root configuration for Aura Sunglasses project",
+  "scripts": {
+    "install-all": "npm install && npm install --prefix frontend && npm install --prefix backend && npm install --prefix venderFrontend",
+    "dev:frontend": "npm run dev --prefix frontend",
+    "dev:backend": "npm run dev --prefix backend",
+    "dev:vendor": "npm run dev --prefix venderFrontend",
+    "dev": "concurrently \"npm run dev:frontend\" \"npm run dev:backend\" \"npm run dev:vendor\"",
+    "build": "npm run build --prefix frontend && npm run build --prefix venderFrontend",
+    "backend": "npm run start --prefix backend",
+    "frontend": "npm run dev --prefix frontend",
+    "vendor": "npm run dev --prefix venderFrontend"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
